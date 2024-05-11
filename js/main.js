@@ -1,4 +1,4 @@
-const nav =document.querySelector('.navbar'),
+const nav =document.querySelector('.nav'),
     navlist=nav.querySelectorAll('li'),
     totalnavlist=navlist.length;
     for(let i=0; i<totalnavlist; i++)
@@ -10,3 +10,13 @@ const nav =document.querySelector('.navbar'),
             
             )
         }
+// Get all zoomable images
+const zoomableImages = document.querySelectorAll('.zoomable-image');
+
+// Attach click event listener to each zoomable image
+zoomableImages.forEach(image => {
+    image.addEventListener('click', () => {
+        // Toggle the 'zoomed-in' class on the clicked image
+        image.classList.toggle('zoomed-in');
+    });
+});

@@ -382,3 +382,62 @@ Projects
     font-size: 18px;
     margin-bottom: 30px;
 }
+.achievements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust spacing between items */
+}
+.achievements .container{
+    padding-bottom: 40px;
+
+}
+.achievements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Individual achievement item */
+.achievement-item {
+    flex: 0 0 calc(32% - 20px); /* Adjust width for three items per row with spacing */
+    max-width: calc(32% - 20px); /* Adjust max-width for three items per row with spacing */
+    margin-bottom: 30px;
+    box-sizing: border-box; /* Include padding and border in item width */
+}
+
+/* Achievement item inner container */
+.achievement-item-inner {
+    border: 6px solid var(--text-black-100);
+    border-radius: 10px;
+    overflow: hidden; /* Ensure content stays within boundaries */
+}
+
+/* Achievement item image */
+.achievement-item-inner img {
+    width: 100%; /* Image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper block-level display */
+    object-fit: cover; /* Maintain aspect ratio and fit within container */
+    border-radius: 10px; /* Apply border radius to image */
+    cursor: pointer;
+}
+/* Style for zoomable images */
+.zoomable-image {
+    width: 80%; /* Image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper block-level display */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+/* Zoom effect when image is clicked */
+.zoomed-in {
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%) scale(0.9); /* Scale up and center image */
+    max-width: 90%; /* Limit maximum width to 90% of viewport width */
+    max-height: auto; /* Limit maximum height to 90% of viewport height */
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.9);
+}
