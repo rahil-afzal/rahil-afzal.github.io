@@ -226,7 +226,9 @@ ul{
 .aside .home-image img{
     z-index: -10;
     height:150px;
-    position:absolute; top:50px; right:80px;
+    display: flexbox;
+    position:absolute; 
+    top:50px; right:80px;
     border-radius: 50%;
 }
 .home{
@@ -435,9 +437,18 @@ Projects
     position: fixed;
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%) scale(0.9); /* Scale up and center image */
-    max-width: 90%; /* Limit maximum width to 90% of viewport width */
+    transform: translate(-50%, -50%) scale(0.6); /* Scale up and center image */
+    max-width: 100%; /* Limit maximum width to 90% of viewport width */
     max-height: auto; /* Limit maximum height to 90% of viewport height */
     z-index: 9999;
     background-color: rgba(0, 0, 0, 0.9);
+}
+@media(max-height:650px){
+    .aside .home-image img{
+        display: none;
+    }
+    .aside .logo{
+        top: 100px;
+    }
+    
 }
