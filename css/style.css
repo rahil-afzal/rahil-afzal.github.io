@@ -444,6 +444,21 @@ Projects
     background-color: rgba(0, 0, 0, 0.9);
     cursor: zoom-out; /* Change cursor to zoom-out */
 }
+/* Overlay background for zoomed-in image */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9998; /* Behind the zoomed-in image */
+    display: none; /* Hidden by default */
+}
+
+.overlay.active {
+    display: block;
+}
 @media(max-height:650px){
     .aside .home-image img{
         display: none;

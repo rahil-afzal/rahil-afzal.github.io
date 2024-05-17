@@ -11,29 +11,39 @@ const nav =document.querySelector('.nav'),
             )
         }
 
+
+
+
+
+
 const zoomableImages = document.querySelectorAll('.zoomable-image');
+let currentZoomedImage = null;
+
+// Create overlay element
+const overlay = document.createElement('div');
+overlay.className = 'overlay';
+document.body.appendChild(overlay);
 
 // Attach click event listener to each zoomable image
 zoomableImages.forEach(image => {
-    image.addEventListener('click', () => {
+    image.addEventListener('click', (event) => {
         // Toggle the 'zoomed-in' class on the clicked image
-        image.classList.toggle('zoomed-in');
-        
-        // Prevent background scrolling when image is zoomed in
-        if (image.classList.contains('zoomed-in')) {
+        if (!image.classList.contains('zoomed-in')) {
+            image.classList.add('zoomed-in');
+            overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
+            currentZoomedImage = image;
         }
+        event.stopPropagation(); // Prevent the event from bubbling up to the document
     });
 });
 
-// Close zoomed image when clicking outside the image
-document.addEventListener('click', (event) => {
-    if (!event.target.classList.contains('zoomable-image')) {
-        zoomableImages.forEach(image => {
-            image.classList.remove('zoomed-in');
-        });
-        document.body.style.overflow = ''; // Restore background scrolling
+// Close zoomed image when clicking on the overlay
+overlay.addEventListener('click', () => {
+    if (currentZoomedImage) {
+        currentZoomedImage.classList.remove('zoomed-in');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        currentZoomedImage = null;
     }
 });
