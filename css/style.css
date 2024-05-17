@@ -296,8 +296,8 @@ Projects
     color: var(--text-black-900);
 }
 .project .project-item{
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 70%;
+    max-width: 70%;
     margin-bottom: 30px;
 }
 .project .project-item p{
@@ -442,6 +442,7 @@ Projects
     max-height: auto; /* Limit maximum height to 90% of viewport height */
     z-index: 9999;
     background-color: rgba(0, 0, 0, 0.9);
+    cursor: zoom-out; /* Change cursor to zoom-out */
 }
 @media(max-height:650px){
     .aside .home-image img{
