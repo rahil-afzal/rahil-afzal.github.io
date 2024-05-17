@@ -237,7 +237,7 @@ ul{
     color: var(--text-black-900);
 }
 .home .home-info{
-    flex: 0 0 70%;
+    flex: 0 0 80%;
     max-width: 80%;
 }
 h3.hello{
