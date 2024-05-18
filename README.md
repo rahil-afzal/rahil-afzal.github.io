@@ -20,7 +20,7 @@ This is my personal portfolio website where I display my work and skills. It inc
 - **Achievement:** Information about my achievements.
 - **Projects:** Detailed descriptions and links to my projects.
 - **Publication:** Detailed descriptions and links to my publication.
-- **Contact:** A form to get in touch with me.
+- **Contact:** Ways to get in touch with me.
 
 ## Technologies Used
 
